@@ -10,14 +10,14 @@ namespace LAB_1_OS_Tests
         [TestMethod]
         public void SumMaxParallelTest1()
         {
-            int[][] myArray = new int[][] { new int[] {2,3 }, new int[] { 4, 7 }, new int[] { 1, 3 },
-            new int[] { 21, 78 }, new int[] { 6, 39 } };
+            int[][] myArray = new int[][] { new int[] {8, 4, 7 }, new int[] { 14, 9, 0 }, new int[] { 3, 7, 1 },
+            new int[] { 21, 7, 9 }, new int[] { 6, 9, 4 } };
             int result = Program.SumMaxParallel(myArray, 20);
-            int expected = 130;
+            int expected = 59;
             Assert.AreEqual(expected, result);
         }
 
-       
+        [TestMethod]
         public void SumMaxParallelTest2()
         {
             int[][] myArray = new int[][] { new int[] {2,3 }, new int[] { 4, 7 }, new int[] { 1, 3 },
@@ -27,6 +27,13 @@ namespace LAB_1_OS_Tests
             Assert.AreEqual(expected, result);
         }
 
-        
+        [TestMethod]
+        public void SumMaxParallelTest3()
+        {
+            int result = Program.SumMaxParallel(Program.Input(586, 908), 4);
+            Assert.IsInstanceOfType(result,typeof(int));
+        }
+
+
     }
 }
