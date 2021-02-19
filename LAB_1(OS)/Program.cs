@@ -107,7 +107,7 @@ namespace LAB_1_OS_
             {
                 for (int j = 0; j < b; j++)
                 {
-                    myArray[i][j] = rn.Next();
+                    myArray[i][j] = rn.Next(0, 10);
                 }
             }
             return myArray;
