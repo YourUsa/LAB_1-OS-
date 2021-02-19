@@ -17,6 +17,7 @@ namespace LAB_1_OS_Tests
             Assert.AreEqual(expected, result);
         }
 
+       
         public void SumMaxParallelTest2()
         {
             int[][] myArray = new int[][] { new int[] {2,3 }, new int[] { 4, 7 }, new int[] { 1, 3 },

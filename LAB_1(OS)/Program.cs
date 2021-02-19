@@ -99,6 +99,10 @@ namespace LAB_1_OS_
         {
             Random rn = new Random();
             int[][] myArray = new int[a][];
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                myArray[i] = new int[b]; 
+            }
             for (int i = 0; i < a; i++)
             {
                 for (int j = 0; j < b; j++)
@@ -109,6 +113,10 @@ namespace LAB_1_OS_
             return myArray;
         }
 
-
+        static void Main(string [] args)
+        {
+            int result = SumMaxParallel(Input(2, 3), 6);
+            Console.WriteLine(result);
+        }
     }
 }
