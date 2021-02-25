@@ -63,17 +63,17 @@ namespace LAB_1_OS_
             int result = 0, sizeSlice=0;
             Parallel [] myThreads = new Parallel[threadCount];
             sizeSlice = myArray.Length / threadCount;
-            int a = myArray.Length;
+            int b = myArray.Length;
             for (int j = 0; j < threadCount; j++)
             {   if (j != threadCount - 1)
                 {
                     myThreads[j] = new Parallel(SubArray(myArray, j * sizeSlice, sizeSlice));
-                    a -= sizeSlice;
+                    b -= sizeSlice;
                 }
                 else
                 {
-                    myThreads[j] = new Parallel(SubArray(myArray, j * sizeSlice, a));
-                    a = 0;
+                    myThreads[j] = new Parallel(SubArray(myArray, j * sizeSlice, b));
+                    b = 0;
                 }
                 myThreads[j].Start();
             }
