@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 
 namespace LAB_1_OS_
@@ -112,11 +113,30 @@ namespace LAB_1_OS_
             }
             return myArray;
         }
+        
+        private static int Run(int[] nums)
+        {
+            int count = 0;
+            Array.Sort(nums);
+            count = nums[nums.Length - 1]; ;
+            return count;
+        }
+
+        public static int SumMaxParallelPLinq(int[][] myArray)
+        {
+            int sum = 0;
+            var max = from n in myArray.AsParallel()
+                      select Run(n);
+            foreach (var n in max)
+                sum += n;
+            return sum;
+        }
 
         static void Main(string [] args)
         {
             int result = SumMaxParallel(Input(2, 3), 6);
             Console.WriteLine(result);
+            
         }
     }
 }
