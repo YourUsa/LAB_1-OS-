@@ -22,10 +22,21 @@ namespace LAB_1_OS_Tests
         {
             int[][] myArray = new int[][] { new int[] {2,3 }, new int[] { 4, 7 }, new int[] { 1, 3 },
             new int[] { 21, 78 }, new int[] { 6, 39 }, new int[] { 7, 3 } };
-            int result = Program.SumMaxParallel(myArray, 7);
+            int result = Program.SumMaxParallel(myArray, 4);
             int expected = 137;
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void SumMaxParallelPLinqTest()
+        {
+            int[][] myArray = new int[][] { new int[] {23, 34, 6, 86}, new int[] { 45, 657, 7, 22  }, new int[] {90, 93, 46, 3 },
+            new int[] { 11, 32, 33, 65}, new int[] { 45, 68, 33, 57 } };
+            int result = Program.SumMaxParallelPLinq(myArray);
+            int expected = 969;
+            Assert.AreEqual(expected, result);
+        }
+
 
         [TestMethod]
         public void SumMaxParallelTest3()
